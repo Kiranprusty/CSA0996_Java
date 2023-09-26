@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+public class Splchar 
+{
+	public static void main(String[] args) {
+
+		// TODO Auto-generated method stub
+		        Scanner scanner = new Scanner(System.in);
+		        System.out.print("Enter a line: ");
+		        String line = scanner.nextLine();
+		        int sCC = 0;
+		        for (int i = 0; i < line.length(); i++) {
+		            char ch = line.charAt(i);
+		            if (!Character.isLetterOrDigit(ch) && !Character.isWhitespace(ch)) {
+		                System.out.print(ch);
+		                sCC++;
+		            }
+		        }
+		        System.out.println("Number of special characters: " + sCC);
+
+	}
+
+}
