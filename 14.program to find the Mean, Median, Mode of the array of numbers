@@ -1,0 +1,58 @@
+package day_2;
+import java.io.*;
+import java.util.*;
+
+public class mean_median_mode_of_array {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the size of the array:");
+		int x=s.nextInt();
+		System.out.println("enter the input of array:");
+		int a[]=new int[x];
+		int count=0;
+		for(int i=0;i<x;i++)
+		{
+			a[i]=s.nextInt();
+			count+=a[i];
+		}
+		int mean=count/x;
+		System.out.println("mean="+mean);
+		Arrays.sort(a);
+		int i=0,j=x-1;
+		int middle=(i+j)/2;
+		if(x%2==0)
+		{
+			int d=(a[middle]+a[middle+1])/2;
+			System.out.println("mode="+d);
+		}
+		else
+		{
+			int d=a[middle];
+			System.out.println("mode="+d);
+		}
+		int tally[]=new int [x],maxcount,modevalue;
+		for(i=0;i<x;i++) {
+			for(j=0;j<x;j++)
+			{
+				if(a[i]==a[j])
+				{
+					tally[i]++;
+				}
+			}
+		}
+		maxcount=0;
+		modevalue=0;
+		for (i = 0; i <x; i++)
+	    {
+	    if (tally[i] > maxcount)
+	    {
+	    maxcount = tally[i];
+	    modevalue = a[i];
+	    }
+	    }
+	    System.out.println("mode="+modevalue);
+	}
+
+}
